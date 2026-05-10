@@ -1,60 +1,64 @@
-// Navigasi Halaman
-function navigateTo(page) {
+// Navigation System
+function navigateTo(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
 
-  document.querySelectorAll('.page').forEach(section => {
-    section.classList.remove('active');
-  });
+    // Show selected page
+    const targetPage = document.getElementById('page-' + pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
 
-  document.getElementById('page-' + page).classList.add('active');
+    // Update active state in nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active-link');
+        if (link.dataset.page === pageId) {
+            link.classList.add('active-link');
+        }
+    });
 
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.remove('active-link');
-  });
-
-  document.querySelectorAll(`[data-page="${page}"]`).forEach(link => {
-    link.classList.add('active-link');
-  });
-
-  document.getElementById('mobile-nav').classList.add('hidden');
-
-  window.scrollTo(0, 0);
+    // Close mobile menu after clicking
+    document.getElementById('mobile-nav').classList.add('hidden');
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
 }
 
-// Event Menu
-document.querySelectorAll('.nav-link').forEach(link => {
+// Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lucide Icons
+    lucide.createIcons();
 
-  link.addEventListener('click', () => {
-    navigateTo(link.dataset.page);
-  });
+    // Setup navigation clicks
+    document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigateTo(link.dataset.page);
+        });
+    });
 
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    
+    menuBtn.addEventListener('click', () => {
+        mobileNav.classList.toggle('hidden');
+    });
+
+    // Contact Form Handler
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const successMsg = document.getElementById('form-success');
+            successMsg.classList.remove('hidden');
+            contactForm.reset();
+            
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 3000);
+        });
+    }
 });
-
-// Mobile Menu
-document.getElementById('mobile-menu-btn')
-.addEventListener('click', () => {
-
-  document.getElementById('mobile-nav')
-  .classList.toggle('hidden');
-
-});
-
-// Form Kontak
-document.getElementById('contact-form')
-.addEventListener('submit', function(e) {
-
-  e.preventDefault();
-
-  document.getElementById('success-message')
-  .classList.remove('hidden');
-
-  this.reset();
-
-  setTimeout(() => {
-    document.getElementById('success-message')
-    .classList.add('hidden');
-  }, 3000);
-
-});
-
-// Lucide Icons
-lucide.createIcons();
