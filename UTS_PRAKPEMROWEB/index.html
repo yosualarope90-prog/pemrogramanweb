@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kopi Nusantara</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-stone-50 text-stone-800">
+
+  <!-- NAVBAR -->
+  <nav class="bg-stone-900 text-white sticky top-0 z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">☕</span>
+        <span class="font-display text-xl font-bold text-amber-400">
+          Kopi Nusantara
+        </span>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <ul id="nav-links" class="hidden md:flex gap-6 text-sm font-semibold uppercase">
+        <li><a class="nav-link active-link" data-page="beranda">Beranda</a></li>
+        <li><a class="nav-link" data-page="tentang">Tentang</a></li>
+        <li><a class="nav-link" data-page="produk">Produk</a></li>
+        <li><a class="nav-link" data-page="kontak">Kontak</a></li>
+      </ul>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <ul id="mobile-nav" class="hidden flex-col px-4 pb-4 md:hidden gap-2">
+      <li><a class="nav-link active-link" data-page="beranda">Beranda</a></li>
+      <li><a class="nav-link" data-page="tentang">Tentang</a></li>
+      <li><a class="nav-link" data-page="produk">Produk</a></li>
+      <li><a class="nav-link" data-page="kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- BERANDA -->
+  <section id="page-beranda" class="page active">
+
+    <div class="hero-section">
+      <div class="max-w-4xl mx-auto text-center px-4">
+        <h1 class="font-display text-5xl md:text-7xl font-black mb-4">
+          Kopi Nusantara
+        </h1>
+
+        <p class="text-xl text-amber-200 mb-8">
+          Cita Rasa Asli dari Bumi Pertiwi
+        </p>
+
+        <a class="nav-link bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full inline-block font-bold"
+          data-page="produk">
+          Lihat Produk
+        </a>
+      </div>
+    </div>
+
+    <!-- KEUNGGULAN -->
+    <div class="max-w-6xl mx-auto py-16 px-4">
+      <h2 class="font-display text-3xl font-bold text-center mb-12">
+        Mengapa Memilih Kami?
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="card">
+          <div class="text-5xl mb-4">🌱</div>
+          <h3 class="font-bold text-xl mb-2">100% Organik</h3>
+          <p>Biji kopi berkualitas dari petani lokal Indonesia.</p>
+        </div>
+
+        <div class="card">
+          <div class="text-5xl mb-4">🔥</div>
+          <h3 class="font-bold text-xl mb-2">Fresh Roasted</h3>
+          <p>Dipanggang setiap minggu untuk menjaga kesegaran.</p>
+        </div>
+
+        <div class="card">
+          <div class="text-5xl mb-4">🤝</div>
+          <h3 class="font-bold text-xl mb-2">Fair Trade</h3>
+          <p>Mendukung kesejahteraan petani kopi lokal.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TENTANG -->
+  <section id="page-tentang" class="page">
+
+    <div class="max-w-4xl mx-auto py-16 px-4">
+
+      <h1 class="font-display text-4xl font-bold text-center mb-8">
+        Tentang Kami
+      </h1>
+
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+
+        <p class="mb-4">
+          Kopi Nusantara adalah perusahaan kopi lokal Indonesia yang berdiri sejak tahun 2018.
+        </p>
+
+        <p class="mb-4">
+          Kami menghadirkan kopi terbaik dari berbagai daerah seperti Aceh, Toraja, Bali, dan Flores.
+        </p>
+
+        <p>
+          Fokus utama kami adalah kualitas, keberlanjutan, dan kepuasan pelanggan.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUK -->
+  <section id="page-produk" class="page">
+
+    <div class="max-w-6xl mx-auto py-16 px-4">
+
+      <h1 class="font-display text-4xl font-bold text-center mb-4">
+        Produk Kami
+      </h1>
+
+      <p class="text-center text-stone-600 mb-12">
+        Pilihan kopi terbaik Indonesia
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="product-card">
+          <div class="product-image">☕</div>
+          <div class="p-6">
+            <h3 class="font-display text-xl font-bold">Gayo Aceh</h3>
+            <p class="price">Rp 85.000 / 250g</p>
+            <p>Kopi premium dengan aroma rempah dan cokelat.</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image green">🫘</div>
+          <div class="p-6">
+            <h3 class="font-display text-xl font-bold">Toraja Sulawesi</h3>
+            <p class="price">Rp 95.000 / 250g</p>
+            <p>Memiliki rasa fruity dan floral yang khas.</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image dark">✨</div>
+          <div class="p-6">
+            <h3 class="font-display text-xl font-bold">Java Preanger</h3>
+            <p class="price">Rp 75.000 / 250g</p>
+            <p>Rasa lembut dengan aroma kacang dan cokelat.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- KONTAK -->
+  <section id="page-kontak" class="page">
+
+    <div class="max-w-4xl mx-auto py-16 px-4">
+
+      <h1 class="font-display text-4xl font-bold text-center mb-8">
+        Hubungi Kami
+      </h1>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+
+          <div class="mb-6 flex gap-3">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <h3 class="font-bold">Alamat</h3>
+              <p>Bandung, Jawa Barat</p>
+            </div>
+          </div>
+
+          <div class="mb-6 flex gap-3">
+            <i data-lucide="phone"></i>
+            <div>
+              <h3 class="font-bold">Telepon</h3>
+              <p>+62 812 3456 7890</p>
+            </div>
+          </div>
+
+          <div class="flex gap-3">
+            <i data-lucide="mail"></i>
+            <div>
+              <h3 class="font-bold">Email</h3>
+              <p>hello@kopinusantara.id</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FORM -->
+        <form id="contact-form" class="bg-white p-8 rounded-2xl shadow-lg">
+
+          <div class="mb-4">
+            <label class="block mb-2 font-semibold">Nama</label>
+            <input type="text" class="input" required>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2 font-semibold">Email</label>
+            <input type="email" class="input" required>
+          </div>
+
+          <div class="mb-4">
+            <label class="block mb-2 font-semibold">Pesan</label>
+            <textarea rows="4" class="input" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            Kirim Pesan
+          </button>
+
+          <p id="success-message" class="hidden text-green-600 mt-4 font-bold">
+            Pesan berhasil dikirim!
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-900 text-white py-8 mt-10">
+    <div class="text-center">
+      <p class="font-display text-amber-400 text-xl font-bold">
+        Kopi Nusantara
+      </p>
+
+      <p class="text-sm mt-2">
+        © 2026 Kopi Nusantara. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
