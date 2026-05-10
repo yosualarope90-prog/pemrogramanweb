@@ -1,106 +1,53 @@
-body {
-  font-family: 'Source Sans 3', sans-serif;
+/* Custom Styles for UTS */
+html, body { 
+    height: 100%; 
+    margin: 0; 
 }
 
-.font-display {
-  font-family: 'Playfair Display', serif;
+body { 
+    font-family: 'Source Sans 3', sans-serif; 
+    box-sizing: border-box;
 }
 
-.page {
-  display: none;
+.font-display { 
+    font-family: 'Playfair Display', serif; 
 }
 
-.page.active {
-  display: block;
+/* Page Visibility Logic */
+.page { 
+    display: none; 
 }
 
-.nav-link {
-  cursor: pointer;
-  transition: 0.3s;
+.page.active { 
+    display: block; 
 }
 
-.nav-link:hover,
-.active-link {
-  color: #f59e0b;
+/* Navigation Styling */
+.nav-link { 
+    cursor: pointer; 
+    transition: color 0.2s; 
 }
 
-.hero-section {
-  background: linear-gradient(to bottom right, #1c1917, #78350f, #1c1917);
-  color: white;
-  padding: 120px 0;
+.nav-link:hover, .nav-link.active-link { 
+    color: #d97706; 
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
+/* Animations */
+.fade-in { 
+    animation: fadeIn 0.5s ease; 
 }
 
-.card:hover {
-  transform: translateY(-5px);
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
 }
 
-.product-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
+/* Interaction Effects */
+.card-hover { 
+    transition: transform 0.3s, box-shadow 0.3s; 
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-image {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 60px;
-  background: linear-gradient(to bottom right, #92400e, #451a03);
-  color: white;
-}
-
-.product-image.green {
-  background: linear-gradient(to bottom right, #166534, #052e16);
-}
-
-.product-image.dark {
-  background: linear-gradient(to bottom right, #44403c, #1c1917);
-}
-
-.price {
-  color: #d97706;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.input {
-  width: 100%;
-  border: 1px solid #d6d3d1;
-  border-radius: 10px;
-  padding: 12px;
-  outline: none;
-}
-
-.input:focus {
-  border-color: #f59e0b;
-}
-
-.submit-btn {
-  width: 100%;
-  background: #d97706;
-  color: white;
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  background: #b45309;
+.card-hover:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12); 
 }
